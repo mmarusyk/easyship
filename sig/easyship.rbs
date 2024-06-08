@@ -1,0 +1,39 @@
+module Easyship
+  VERSION: String
+
+  def self.confugration: () -> Configuration
+  def self.configure: () { (Configuration) -> void } -> void
+
+  class Configuration
+    attr_accessor api_key: String
+    attr_accessor environment: String
+  end
+
+  module Errors
+    class EasyshipError < StandardError
+      attr_accessor message: String
+      attr_accessor body_error: Hash 
+    end
+
+    class ServerError < EasyshipError
+    end
+
+    class ClientError < EasyshipError
+    end
+
+    class UnprocessableContentError < EasyshipError
+    end
+
+    class InvalidTokenError < EasyshipError
+    end
+
+    class RateLimitError < EasyshipError
+    end
+
+    class ResourceNotFoundError < EasyshipError
+    end
+
+    class PaymentRequiredError < EasyshipError
+    end
+  end
+end

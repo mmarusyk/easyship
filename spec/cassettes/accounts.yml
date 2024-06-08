@@ -1,0 +1,72 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.easyship.com/2023-01/account
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer 
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.9.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 08 Jun 2024 08:56:10 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Etag:
+      - W/"24617145588fe9c1e8c1d7bb5ac6887c"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Security-Policy:
+      - 'default-src ''none''; font-src ''self'' https: data:; img-src ''self'' https:
+        data:; object-src ''none''; script-src ''self'' https: ''nonce-''; style-src
+        ''self'' https: ''nonce-''; frame-ancestors https://*.easyship.com'
+      X-Request-Id:
+      - bf196783ae67cdda6f3197738fe27af8
+      X-Runtime:
+      - '0.093627'
+      X-Rack-Cors:
+      - miss; no-origin
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains; preload
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8907aac798283bcc-WAW
+    body:
+      encoding: ASCII-8BIT
+      string: '{"account":{"billing_address":{"city":"Kyiv","company_name":"Global Farming","contact_email":"example@example.com","contact_name":"Michael M","contact_phone":"+xxxxxxxxxxx","country_alpha2":"UA","default_for":{"pickup":false,"billing":true,"sender":false,"return":false},"id":"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx","line_1":"Kyiv","line_2":"Kyiv","postal_code":"10001","state":"","validation":null},"credit":{"available_balance":0.0,"balance":0.0,"currency":"UAH"},"easyship_company_id":"xxxxxxxx","name":"Global Farming"},"meta":{"request_id":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}}'
+  recorded_at: Sat, 08 Jun 2024 08:56:10 GMT
+recorded_with: VCR 6.2.0
