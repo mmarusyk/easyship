@@ -5,9 +5,9 @@ module Easyship
     # Handles the response body
     class ResponseBodyHandler
       def self.handle_response(response)
-        JSON.parse(response.body, symbolize_names: true)
-      rescue JSON::ParserError
-        response.body
+        body = response.body
+
+        JSON.parse(body, symbolize_names: true) unless body.nil? || body.empty?
       end
     end
   end
