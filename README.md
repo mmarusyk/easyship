@@ -7,7 +7,7 @@ This gem provides a simple client for Easyship, offering accessing to Easyship's
 
 Install the gem and add to the application's Gemfile by executing:
 
-    $ bundle add easyhip
+    $ bundle add easyship
 
 If bundler is not being used to manage dependencies, install the gem by executing:
 
@@ -46,7 +46,7 @@ Easyship::Configuration.configure do |config|
   config.api_key = 'your_easyship_api_key'
 end
 ```
-
+Configuration supports the next keys: `url`, `api_key`, `per_page`.
 
 ### Making Requests
 ```ruby
@@ -79,7 +79,7 @@ Easyship::Client.post('/2023-01/shipment', payload)
 ```
 
 ### Handle errors
-hen using the `easyship` gem in a Rails application, it's important to handle potential errors that may arise during API calls. Here's how you can handle errors gracefully:
+Then using the `easyship` gem in a Rails application, it's important to handle potential errors that may arise during API calls. Here's how you can handle errors gracefully:
 
 1. Wrap your API calls in a `begin-rescue` block.
 2. Catch specific errors from the `easyship` gem to handle them accordingly.
@@ -94,11 +94,29 @@ rescue Easyship::Errors::RateLimitError => e
 end
 ```
 
+### Pagination
+The `get` method in the `Easyship::Client` class is designed to support pagination seamlessly when interacting with the Easyship API by passing block of code. This method abstracts the complexity of managing pagination logic, allowing you to retrieve all items across multiple pages with a single method call.
+
+Suppose you want to retrieve a list of shipments that may span multiple pages. Here's how you can use the `get` method:
+
+```ruby
+shipments = []
+
+Easyship::Client.instance.get('/2023-01/shipments') do |page|
+  shipments.concat(page[:shipments])
+end
+
+shipments # Returns all shipments from all pages
+```
+
+To setup items perpage, use the key `per_page` in your configuration.
+
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. Then, eun `rake rubocop` to run the rubocop. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
 To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+
 
 ## Contributing
 
