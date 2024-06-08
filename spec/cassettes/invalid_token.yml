@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.easyship.com/2023-01/account
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <API_KEY>
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.9.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Date:
+      - Sat, 08 Jun 2024 09:07:01 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '153'
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Cache-Control:
+      - no-cache
+      Content-Security-Policy:
+      - 'default-src ''none''; font-src ''self'' https: data:; img-src ''self'' https:
+        data:; object-src ''none''; script-src ''self'' https: ''nonce-''; style-src
+        ''self'' https: ''nonce-''; frame-ancestors https://*.easyship.com'
+      X-Request-Id:
+      - xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+      X-Runtime:
+      - '0.026114'
+      Vary:
+      - Origin
+      X-Rack-Cors:
+      - miss; no-origin
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains; preload
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+    body:
+      encoding: UTF-8
+      string: '{"error":{"code":"invalid_token","details":[],"message":"Invalid token.","request_id":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","type":"invalid_request_error"}}'
+  recorded_at: Sat, 08 Jun 2024 09:07:01 GMT
+recorded_with: VCR 6.2.0
