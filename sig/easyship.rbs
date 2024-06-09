@@ -9,10 +9,38 @@ module Easyship
     attr_accessor environment: String
   end
 
+  class Error
+    ERRORS: { 401 => untyped, 402 => untyped, 404 => untyped, 422 => untyped, 429 => untyped }
+  end
+
+  class Client
+    @url: untyped
+
+    @api_key: untyped
+
+    include Singleton
+
+    def initialize: () -> void
+
+    def get: (String path, ?::Hash[untyped, untyped] params) ?{ (?) -> untyped } -> untyped
+
+    def post: (String path, ?::Hash[untyped, untyped] params) -> untyped
+
+    def put: (String path, ?::Hash[untyped, untyped] params) -> untyped
+
+    def delete: (String path, ?::Hash[untyped, untyped] params) -> untyped
+
+    private
+
+    def connection: () -> untyped
+
+    def handle_response: (untyped response) -> untyped
+  end
+
   module Errors
     class EasyshipError < StandardError
       attr_accessor message: String
-      attr_accessor body_error: Hash 
+      attr_accessor body_error: Hash[Symbol, untyped]
     end
 
     class ServerError < EasyshipError
@@ -36,4 +64,56 @@ module Easyship
     class PaymentRequiredError < EasyshipError
     end
   end
+
+  module Handlers
+    class ResponseBodyHandler
+      def self.handle_response: (untyped response) -> untyped
+    end
+  end
+
+  module Middleware
+    class ErrorHandlerMiddleware
+      def on_complete: (untyped env) -> void
+
+      private
+
+      def handle_status_code: (Integer status_code, Hash[Symbol, untyped] body) -> void
+
+      def raise_error: (Class[Easyship::Errors::EasyshipError] class_error, Hash[Symbol, untyped] body) -> void
+
+      def body_error: (Hash[Symbol, untyped] body) -> Hash[Symbol, untyped]
+
+      def message: (Hash[Symbol, untyped] body) -> untyped
+
+      def json?: (String body) -> bool 
+    end
+  end
+
+  module Pagination
+    class Cursor
+      @client: untyped
+
+      @path: untyped
+
+      @params: untyped
+
+      @per_page: untyped
+
+      attr_reader client: untyped
+
+      attr_reader path: untyped
+
+      attr_reader params: untyped
+
+      attr_reader key: untyped
+
+      attr_reader per_page: untyped
+
+      def initialize: (untyped client, untyped path, untyped params) -> void
+
+      def all: () { (untyped) -> untyped } -> untyped
+    end
+  end
+
+  
 end
