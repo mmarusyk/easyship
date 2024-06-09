@@ -3,6 +3,13 @@
 This gem provides a simple client for Easyship, offering accessing to Easyship's
     shipping, tracking, and logistics services directly from Ruby applications.
 
+## Requirements
+
+Before you begin, ensure you have met the following requirements:
+
+- Ruby version 3.0.0 or newer. You can check your Ruby version by running `ruby -v`.
+- Bundler installed. You can install Bundler with `gem install bundler`.
+
 ## Installation
 
 Install the gem and add to the application's Gemfile by executing:
@@ -25,7 +32,7 @@ If you have to use in a ruby file:
 ```ruby
 require 'easyship'
 
-Easyship::Configuration.configure do |c|
+Easyship.configure do |c|
   c.url = 'api_url'
   c.api_key = 'your_easyship_api_key'
 end
@@ -41,14 +48,16 @@ If you have to use in Rails:
 
 3. Create a new file in `config/initializers` directory
 ```ruby
-Easyship::Configuration.configure do |config|
+Easyship.configure do |config|
   config.url = 'api_url'
   config.api_key = 'your_easyship_api_key'
 end
 ```
+
 Configuration supports the next keys: `url`, `api_key`, `per_page`.
 
 ### Making Requests
+`Easyship::Client` supports the next methods: `get`, `post`, `put`, `delete`.
 ```ruby
 Easyship::Client.get('/2023-01/account')
 ```
@@ -79,7 +88,7 @@ Easyship::Client.post('/2023-01/shipment', payload)
 ```
 
 ### Handle errors
-Then using the `easyship` gem in a Rails application, it's important to handle potential errors that may arise during API calls. Here's how you can handle errors gracefully:
+When using the `easyship` gem in a Rails application, it's important to handle potential errors that may arise during API calls. Here's how you can handle errors gracefully:
 
 1. Wrap your API calls in a `begin-rescue` block.
 2. Catch specific errors from the `easyship` gem to handle them accordingly.
@@ -120,7 +129,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/mmarusyk/easyship. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/mmarusyk/easyship/blob/main/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/mmarusyk/easyship. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/mmarusyk/easyship/blob/main/CODE_OF_CONDUCT.md). You can find a list of contributors in the [CONTRIBUTORS.md](https://github.com/mmarusyk/easyship/blob/main/CONTRIBUTORS.md) file.
 
 ## License
 
