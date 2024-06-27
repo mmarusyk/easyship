@@ -29,8 +29,6 @@ module Easyship
 
         if body.key?(:error) && body[:error].is_a?(Hash)
           format_body_error(body)
-        elsif body.key?(:errors) && body[:errors].is_a?(Array)
-          format_body_errors_array(body)
         elsif body.key?(:errors)
           format_body_errors(body)
         else
@@ -46,12 +44,10 @@ module Easyship
         body[:error]
       end
 
-      def format_body_errors_array(body)
-        { details: body[:errors], message: body[:errors].map { |error| error[:message] }.join(', ') }
-      end
-
       def format_body_errors(body)
-        { details: body[:errors], message: body[:errors] }
+        errors = Array(body[:errors])
+
+        { details: errors, message: errors.join(', ') }
       end
 
       def format_by_default(body)

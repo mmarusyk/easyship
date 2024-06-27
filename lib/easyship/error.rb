@@ -7,6 +7,7 @@ module Easyship
   class Error
     # rubocop:disable Style::MutableConstant Style::MissingElse
     ERRORS = {
+      400 => Easyship::Errors::BadRequestError,
       401 => Easyship::Errors::InvalidTokenError,
       402 => Easyship::Errors::PaymentRequiredError,
       404 => Easyship::Errors::ResourceNotFoundError,

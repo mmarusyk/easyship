@@ -1,5 +1,10 @@
 ## [Unreleased]
 
+## [v0.1.3](https://github.com/mmarusyk/easyship/tree/v0.1.3) - 2024-06-27
+
+### Fixed
+- Error from v1 is not handled by @mmarusyk
+
 ## [v0.1.2](https://github.com/mmarusyk/easyship/tree/v0.1.2) - 2024-06-24
 
 ### Features

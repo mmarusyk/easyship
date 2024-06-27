@@ -34,4 +34,16 @@ RSpec.describe Easyship::Client do
       end
     end
   end
+
+  describe '#post' do
+    let(:path) { '/rate/v1/rates' }
+
+    context 'when invalid request body' do
+      it 'raises a ClientError' do
+        VCR.use_cassette('rate/v1/rates/invalid-body') do
+          expect { client.post(path, {}) }.to raise_error(Easyship::Errors::BadRequestError)
+        end
+      end
+    end
+  end
 end
