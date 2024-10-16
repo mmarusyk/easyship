@@ -1,13 +1,14 @@
 # frozen_string_literal: true
 
 require_relative '../error'
+
 module Easyship
   module Middleware
     # Response middleware that raises an error based on the response status code
     class ErrorHandlerMiddleware < Faraday::Middleware
       def on_complete(env)
         status_code = env[:status].to_i
-        body = JSON.parse(env[:body], symbolize_names: true) if json?(env[:body])
+        body = response_body(env[:body])
 
         handle_status_code(status_code, body)
       end
@@ -54,8 +55,10 @@ module Easyship
         { details: body, message: 'Something went wrong.' }
       end
 
-      def json?(body)
-        !body.nil? && body.is_a?(String)
+      def response_body(body)
+        JSON.parse(body, symbolize_names: true)
+      rescue JSON::ParserError
+        nil
       end
     end
   end

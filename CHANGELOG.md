@@ -1,5 +1,11 @@
 ## [Unreleased]
 
+
+## [v0.1.4](https://github.com/mmarusyk/easyship/tree/v0.1.4) - 2024-10-16
+
+### Fixed
+- Handle JSON::Parser Error
+
 ## [v0.1.3](https://github.com/mmarusyk/easyship/tree/v0.1.3) - 2024-06-27
 
 ### Fixed

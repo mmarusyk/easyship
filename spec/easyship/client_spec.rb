@@ -15,8 +15,6 @@ RSpec.describe Easyship::Client do
     end
 
     context 'when invalid api_key' do
-      let(:path) { '/2023-01/account' }
-
       it 'raises an InvalidTokenError' do
         VCR.use_cassette('invalid_token') do
           expect { client.get(path) }.to raise_error(Easyship::Errors::InvalidTokenError)
@@ -30,6 +28,14 @@ RSpec.describe Easyship::Client do
       it 'raises a ResourceNotFoundError' do
         VCR.use_cassette('invalid_path') do
           expect { client.get(path) }.to raise_error(Easyship::Errors::ResourceNotFoundError)
+        end
+      end
+    end
+
+    context 'when internal server error' do
+      it 'raises an ServerError' do
+        VCR.use_cassette('server_error') do
+          expect { client.get(path) }.to raise_error(Easyship::Errors::ServerError)
         end
       end
     end
