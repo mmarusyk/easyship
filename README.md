@@ -59,7 +59,7 @@ Configuration supports the next keys: `url`, `api_key`, `per_page`.
 ### Making Requests
 `Easyship::Client` supports the next methods: `get`, `post`, `put`, `delete`.
 ```ruby
-Easyship::Client.get('/2023-01/account')
+Easyship::Client.instance.get('/2023-01/account')
 ```
 
 To make post request:
@@ -84,7 +84,7 @@ payload = {
   ]
 }
 
-Easyship::Client.post('/2023-01/shipment', payload)
+Easyship::Client.instance.post('/2023-01/shipment', payload)
 ```
 
 ### Handle errors
@@ -97,7 +97,7 @@ For example:
 
 ```ruby
 begin
-  Easyship::Client.post('/2023-01/shipment', payload)
+  Easyship::Client.instance.post('/2023-01/shipment', payload)
 rescue Easyship::Errors::RateLimitError => e
   Rails.logger.error("Easyship Error: #{e.message}")
 end
