@@ -1,5 +1,11 @@
 ## [Unreleased]
 
+## [v0.1.5](https://github.com/mmarusyk/easyship/tree/v0.1.5) - 2025-05-03
+
+### Fixed
+- update docs by @troyizzle in https://github.com/mmarusyk/easyship/pull/5
+- Add test coverage by @mmarusyk in https://github.com/mmarusyk/easyship/pull/6
+- Automate release by @mmarusyk in https://github.com/mmarusyk/easyship/pull/7
 
 ## [v0.1.4](https://github.com/mmarusyk/easyship/tree/v0.1.4) - 2024-10-16
 
