@@ -1,0 +1,251 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.easyship.com/2023-01/countries?page=1&per_page=100
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <API_KEY>
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 03 May 2025 12:25:51 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Methods:
+      - GET, POST, DELETE, PUT, PATCH, OPTIONS, HEAD
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-request-id
+      Access-Control-Max-Age:
+      - '0'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      X-Xss-Protection:
+      - '0'
+      Content-Security-Policy:
+      - 'default-src ''none''; font-src ''self'' https: data:; img-src ''self'' https:
+        data:; object-src ''none''; script-src ''self'' https: ''nonce-''; style-src
+        ''self'' https: ''nonce-''; frame-ancestors https://*.easyship.com'
+      Etag:
+      - W/"28fece14f9f0a0feb3956baa802a4ae1"
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains; preload
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Rack-Cors:
+      - hit
+      X-Request-Id:
+      - cf9aad618846fb6817af55dbcce09598
+      X-Runtime:
+      - '0.044715'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 939fbe4d9ec91ed5-MRS
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJjb3VudHJpZXMiOlt7ImFscGhhMiI6IkFGIiwiaWQiOjMsIm5hbWUiOiJBZmdoYW5pc3RhbiJ9LHsiYWxwaGEyIjoiQUwiLCJpZCI6NiwibmFtZSI6IkFsYmFuaWEifSx7ImFscGhhMiI6IkRaIiwiaWQiOjYzLCJuYW1lIjoiQWxnZXJpYSJ9LHsiYWxwaGEyIjoiQVMiLCJpZCI6MTIsIm5hbWUiOiJBbWVyaWNhbiBTYW1vYSJ9LHsiYWxwaGEyIjoiQUQiLCJpZCI6MSwibmFtZSI6IkFuZG9ycmEifSx7ImFscGhhMiI6IkFPIiwiaWQiOjksIm5hbWUiOiJBbmdvbGEifSx7ImFscGhhMiI6IkFJIiwiaWQiOjUsIm5hbWUiOiJBbmd1aWxsYSJ9LHsiYWxwaGEyIjoiQVEiLCJpZCI6MTAsIm5hbWUiOiJBbnRhcmN0aWNhIn0seyJhbHBoYTIiOiJBRyIsImlkIjo0LCJuYW1lIjoiQW50aWd1YSBhbmQgQmFyYnVkYSJ9LHsiYWxwaGEyIjoiQVIiLCJpZCI6MTEsIm5hbWUiOiJBcmdlbnRpbmEifSx7ImFscGhhMiI6IkFNIiwiaWQiOjcsIm5hbWUiOiJBcm1lbmlhIn0seyJhbHBoYTIiOiJBVyIsImlkIjoxNSwibmFtZSI6IkFydWJhIn0seyJhbHBoYTIiOiJBVSIsImlkIjoxNCwibmFtZSI6IkF1c3RyYWxpYSJ9LHsiYWxwaGEyIjoiQVQiLCJpZCI6MTMsIm5hbWUiOiJBdXN0cmlhIn0seyJhbHBoYTIiOiJBWiIsImlkIjoxNywibmFtZSI6IkF6ZXJiYWlqYW4ifSx7ImFscGhhMiI6IkJTIiwiaWQiOjMzLCJuYW1lIjoiQmFoYW1hcyJ9LHsiYWxwaGEyIjoiQkgiLCJpZCI6MjQsIm5hbWUiOiJCYWhyYWluIn0seyJhbHBoYTIiOiJCRCIsImlkIjoyMCwibmFtZSI6IkJhbmdsYWRlc2gifSx7ImFscGhhMiI6IkJCIiwiaWQiOjE5LCJuYW1lIjoiQmFyYmFkb3MifSx7ImFscGhhMiI6IkJZIiwiaWQiOjM3LCJuYW1lIjoiQmVsYXJ1cyJ9LHsiYWxwaGEyIjoiQkUiLCJpZCI6MjEsIm5hbWUiOiJCZWxnaXVtIn0seyJhbHBoYTIiOiJCWiIsImlkIjozOCwibmFtZSI6IkJlbGl6ZSJ9LHsiYWxwaGEyIjoiQkoiLCJpZCI6MjYsIm5hbWUiOiJCZW5pbiJ9LHsiYWxwaGEyIjoiQk0iLCJpZCI6MjgsIm5hbWUiOiJCZXJtdWRhIn0seyJhbHBoYTIiOiJCVCIsImlkIjozNCwibmFtZSI6IkJodXRhbiJ9LHsiYWxwaGEyIjoiQk8iLCJpZCI6MzAsIm5hbWUiOiJCb2xpdmlhIn0seyJhbHBoYTIiOiJCUSIsImlkIjozMSwibmFtZSI6IkJvbmFpcmUsIFNpbnQgRXVzdGF0aXVzIGFuZCBTYWJhIn0seyJhbHBoYTIiOiJCQSIsImlkIjoxOCwibmFtZSI6IkJvc25pYSBhbmQgSGVyemVnb3ZpbmEifSx7ImFscGhhMiI6IkJXIiwiaWQiOjM2LCJuYW1lIjoiQm90c3dhbmEifSx7ImFscGhhMiI6IkJWIiwiaWQiOjM1LCJuYW1lIjoiQm91dmV0IElzbGFuZCJ9LHsiYWxwaGEyIjoiQlIiLCJpZCI6MzIsIm5hbWUiOiJCcmF6aWwifSx7ImFscGhhMiI6IklPIiwiaWQiOjEwNywibmFtZSI6IkJyaXRpc2ggSW5kaWFuIE9jZWFuIFRlcnJpdG9yeSJ9LHsiYWxwaGEyIjoiQk4iLCJpZCI6MjksIm5hbWUiOiJCcnVuZWkgRGFydXNzYWxhbSJ9LHsiYWxwaGEyIjoiQkciLCJpZCI6MjMsIm5hbWUiOiJCdWxnYXJpYSJ9LHsiYWxwaGEyIjoiQkYiLCJpZCI6MjIsIm5hbWUiOiJCdXJraW5hIEZhc28ifSx7ImFscGhhMiI6IkJJIiwiaWQiOjI1LCJuYW1lIjoiQnVydW5kaSJ9LHsiYWxwaGEyIjoiS0giLCJpZCI6MTE4LCJuYW1lIjoiQ2FtYm9kaWEifSx7ImFscGhhMiI6IkNNIiwiaWQiOjQ4LCJuYW1lIjoiQ2FtZXJvb24ifSx7ImFscGhhMiI6IkNBIiwiaWQiOjM5LCJuYW1lIjoiQ2FuYWRhIn0seyJhbHBoYTIiOiJDViIsImlkIjo1MywibmFtZSI6IkNhcGUgVmVyZGUifSx7ImFscGhhMiI6IktZIiwiaWQiOjEyNSwibmFtZSI6IkNheW1hbiBJc2xhbmRzIn0seyJhbHBoYTIiOiJDRiIsImlkIjo0MiwibmFtZSI6IkNlbnRyYWwgQWZyaWNhbiBSZXB1YmxpYyJ9LHsiYWxwaGEyIjoiVEQiLCJpZCI6MjE2LCJuYW1lIjoiQ2hhZCJ9LHsiYWxwaGEyIjoiQ0wiLCJpZCI6NDcsIm5hbWUiOiJDaGlsZSJ9LHsiYWxwaGEyIjoiQ04iLCJpZCI6NDksIm5hbWUiOiJDaGluYSJ9LHsiYWxwaGEyIjoiQ1giLCJpZCI6NTUsIm5hbWUiOiJDaHJpc3RtYXMgSXNsYW5kIn0seyJhbHBoYTIiOiJDQyIsImlkIjo0MCwibmFtZSI6IkNvY29zIChLZWVsaW5nKSBJc2xhbmRzIn0seyJhbHBoYTIiOiJDTyIsImlkIjo1MCwibmFtZSI6IkNvbG9tYmlhIn0seyJhbHBoYTIiOiJLTSIsImlkIjoxMjAsIm5hbWUiOiJDb21vcm9zIn0seyJhbHBoYTIiOiJDRyIsImlkIjo0MywibmFtZSI6IkNvbmdvIn0seyJhbHBoYTIiOiJDRCIsImlkIjo0MSwibmFtZSI6IkNvbmdvLCBUaGUgRGVtb2NyYXRpYyBSZXB1YmxpYyBPZiBUaGUifSx7ImFscGhhMiI6IkNLIiwiaWQiOjQ2LCJuYW1lIjoiQ29vayBJc2xhbmRzIn0seyJhbHBoYTIiOiJDUiIsImlkIjo1MSwibmFtZSI6IkNvc3RhIFJpY2EifSx7ImFscGhhMiI6IkhSIiwiaWQiOjk5LCJuYW1lIjoiQ3JvYXRpYSJ9LHsiYWxwaGEyIjoiQ1UiLCJpZCI6NTIsIm5hbWUiOiJDdWJhIn0seyJhbHBoYTIiOiJDVyIsImlkIjo1NCwibmFtZSI6IkN1cmHDp2FvIn0seyJhbHBoYTIiOiJDWSIsImlkIjo1NiwibmFtZSI6IkN5cHJ1cyJ9LHsiYWxwaGEyIjoiQ1oiLCJpZCI6NTcsIm5hbWUiOiJDemVjaCBSZXB1YmxpYyJ9LHsiYWxwaGEyIjoiQ0kiLCJpZCI6NDUsIm5hbWUiOiJDw7R0ZSBEJ0l2b2lyZSJ9LHsiYWxwaGEyIjoiREsiLCJpZCI6NjAsIm5hbWUiOiJEZW5tYXJrIn0seyJhbHBoYTIiOiJESiIsImlkIjo1OSwibmFtZSI6IkRqaWJvdXRpIn0seyJhbHBoYTIiOiJETSIsImlkIjo2MSwibmFtZSI6IkRvbWluaWNhIn0seyJhbHBoYTIiOiJETyIsImlkIjo2MiwibmFtZSI6IkRvbWluaWNhbiBSZXB1YmxpYyJ9LHsiYWxwaGEyIjoiRUMiLCJpZCI6NjQsIm5hbWUiOiJFY3VhZG9yIn0seyJhbHBoYTIiOiJFRyIsImlkIjo2NiwibmFtZSI6IkVneXB0In0seyJhbHBoYTIiOiJTViIsImlkIjoyMTEsIm5hbWUiOiJFbCBTYWx2YWRvciJ9LHsiYWxwaGEyIjoiR1EiLCJpZCI6ODksIm5hbWUiOiJFcXVhdG9yaWFsIEd1aW5lYSJ9LHsiYWxwaGEyIjoiRVIiLCJpZCI6NjgsIm5hbWUiOiJFcml0cmVhIn0seyJhbHBoYTIiOiJFRSIsImlkIjo2NSwibmFtZSI6IkVzdG9uaWEifSx7ImFscGhhMiI6IkVUIiwiaWQiOjcwLCJuYW1lIjoiRXRoaW9waWEifSx7ImFscGhhMiI6IkZLIiwiaWQiOjczLCJuYW1lIjoiRmFsa2xhbmQgSXNsYW5kcyAoTWFsdmluYXMpIn0seyJhbHBoYTIiOiJGTyIsImlkIjo3NSwibmFtZSI6IkZhcm9lIElzbGFuZHMifSx7ImFscGhhMiI6IkZKIiwiaWQiOjcyLCJuYW1lIjoiRmlqaSJ9LHsiYWxwaGEyIjoiRkkiLCJpZCI6NzEsIm5hbWUiOiJGaW5sYW5kIn0seyJhbHBoYTIiOiJGUiIsImlkIjo3NiwibmFtZSI6IkZyYW5jZSJ9LHsiYWxwaGEyIjoiR0YiLCJpZCI6ODEsIm5hbWUiOiJGcmVuY2ggR3VpYW5hIn0seyJhbHBoYTIiOiJQRiIsImlkIjoxNzYsIm5hbWUiOiJGcmVuY2ggUG9seW5lc2lhIn0seyJhbHBoYTIiOiJURiIsImlkIjoyMTcsIm5hbWUiOiJGcmVuY2ggU291dGhlcm4gVGVycml0b3JpZXMifSx7ImFscGhhMiI6IkdBIiwiaWQiOjc3LCJuYW1lIjoiR2Fib24ifSx7ImFscGhhMiI6IkdNIiwiaWQiOjg2LCJuYW1lIjoiR2FtYmlhIn0seyJhbHBoYTIiOiJHRSIsImlkIjo4MCwibmFtZSI6Ikdlb3JnaWEifSx7ImFscGhhMiI6IkRFIiwiaWQiOjU4LCJuYW1lIjoiR2VybWFueSJ9LHsiYWxwaGEyIjoiR0giLCJpZCI6ODMsIm5hbWUiOiJHaGFuYSJ9LHsiYWxwaGEyIjoiR0kiLCJpZCI6ODQsIm5hbWUiOiJHaWJyYWx0YXIifSx7ImFscGhhMiI6IkdSIiwiaWQiOjkwLCJuYW1lIjoiR3JlZWNlIn0seyJhbHBoYTIiOiJHTCIsImlkIjo4NSwibmFtZSI6IkdyZWVubGFuZCJ9LHsiYWxwaGEyIjoiR0QiLCJpZCI6NzksIm5hbWUiOiJHcmVuYWRhIn0seyJhbHBoYTIiOiJHUCIsImlkIjo4OCwibmFtZSI6Ikd1YWRlbG91cGUifSx7ImFscGhhMiI6IkdVIiwiaWQiOjkzLCJuYW1lIjoiR3VhbSJ9LHsiYWxwaGEyIjoiR1QiLCJpZCI6OTIsIm5hbWUiOiJHdWF0ZW1hbGEifSx7ImFscGhhMiI6IkdHIiwiaWQiOjgyLCJuYW1lIjoiR3Vlcm5zZXkifSx7ImFscGhhMiI6IkdOIiwiaWQiOjg3LCJuYW1lIjoiR3VpbmVhIn0seyJhbHBoYTIiOiJHVyIsImlkIjo5NCwibmFtZSI6Ikd1aW5lYS1CaXNzYXUifSx7ImFscGhhMiI6IkdZIiwiaWQiOjk1LCJuYW1lIjoiR3V5YW5hIn0seyJhbHBoYTIiOiJIVCIsImlkIjoxMDAsIm5hbWUiOiJIYWl0aSJ9LHsiYWxwaGEyIjoiSE0iLCJpZCI6OTcsIm5hbWUiOiJIZWFyZCBhbmQgTWNEb25hbGQgSXNsYW5kcyJ9LHsiYWxwaGEyIjoiVkEiLCJpZCI6MjM3LCJuYW1lIjoiSG9seSBTZWUgKFZhdGljYW4gQ2l0eSBTdGF0ZSkifSx7ImFscGhhMiI6IkhOIiwiaWQiOjk4LCJuYW1lIjoiSG9uZHVyYXMifSx7ImFscGhhMiI6IkhLIiwiaWQiOjk2LCJuYW1lIjoiSG9uZyBLb25nIn0seyJhbHBoYTIiOiJIVSIsImlkIjoxMDEsIm5hbWUiOiJIdW5nYXJ5In1dLCJtZXRhIjp7InBhZ2luYXRpb24iOnsicGFnZSI6MSwibmV4dCI6MiwiY291bnQiOjI0OX0sInJlcXVlc3RfaWQiOiJjZjlhYWQ2MTg4NDZmYjY4MTdhZjU1ZGJjY2UwOTU5OCJ9fQ==
+  recorded_at: Sat, 03 May 2025 12:25:51 GMT
+- request:
+    method: get
+    uri: https://api.easyship.com/2023-01/countries?page=2&per_page=100
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <API_KEY>
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 03 May 2025 12:25:52 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Methods:
+      - GET, POST, DELETE, PUT, PATCH, OPTIONS, HEAD
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-request-id
+      Access-Control-Max-Age:
+      - '0'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      X-Xss-Protection:
+      - '0'
+      Content-Security-Policy:
+      - 'default-src ''none''; font-src ''self'' https: data:; img-src ''self'' https:
+        data:; object-src ''none''; script-src ''self'' https: ''nonce-''; style-src
+        ''self'' https: ''nonce-''; frame-ancestors https://*.easyship.com'
+      Etag:
+      - W/"1ad479b3ce60bfb07c1839849342b12b"
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains; preload
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Rack-Cors:
+      - hit
+      X-Request-Id:
+      - '0966cf1e78f20e6a43b5ea650b735c13'
+      X-Runtime:
+      - '0.065597'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 939fbe526c160d4b-MRS
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJjb3VudHJpZXMiOlt7ImFscGhhMiI6IklTIiwiaWQiOjExMCwibmFtZSI6IkljZWxhbmQifSx7ImFscGhhMiI6IklOIiwiaWQiOjEwNiwibmFtZSI6IkluZGlhIn0seyJhbHBoYTIiOiJJRCIsImlkIjoxMDIsIm5hbWUiOiJJbmRvbmVzaWEifSx7ImFscGhhMiI6IklSIiwiaWQiOjEwOSwibmFtZSI6IklyYW4sIElzbGFtaWMgUmVwdWJsaWMgT2YifSx7ImFscGhhMiI6IklRIiwiaWQiOjEwOCwibmFtZSI6IklyYXEifSx7ImFscGhhMiI6IklFIiwiaWQiOjEwMywibmFtZSI6IklyZWxhbmQifSx7ImFscGhhMiI6IklNIiwiaWQiOjEwNSwibmFtZSI6IklzbGUgb2YgTWFuIn0seyJhbHBoYTIiOiJJTCIsImlkIjoxMDQsIm5hbWUiOiJJc3JhZWwifSx7ImFscGhhMiI6IklUIiwiaWQiOjExMSwibmFtZSI6Ikl0YWx5In0seyJhbHBoYTIiOiJKTSIsImlkIjoxMTMsIm5hbWUiOiJKYW1haWNhIn0seyJhbHBoYTIiOiJKUCIsImlkIjoxMTUsIm5hbWUiOiJKYXBhbiJ9LHsiYWxwaGEyIjoiSkUiLCJpZCI6MTEyLCJuYW1lIjoiSmVyc2V5In0seyJhbHBoYTIiOiJKTyIsImlkIjoxMTQsIm5hbWUiOiJKb3JkYW4ifSx7ImFscGhhMiI6IktaIiwiaWQiOjEyNiwibmFtZSI6IkthemFraHN0YW4ifSx7ImFscGhhMiI6IktFIiwiaWQiOjExNiwibmFtZSI6IktlbnlhIn0seyJhbHBoYTIiOiJLSSIsImlkIjoxMTksIm5hbWUiOiJLaXJpYmF0aSJ9LHsiYWxwaGEyIjoiS1AiLCJpZCI6MTIyLCJuYW1lIjoiS29yZWEsIERlbW9jcmF0aWMgUGVvcGxlJ3MgUmVwdWJsaWMgT2YifSx7ImFscGhhMiI6IktSIiwiaWQiOjEyMywibmFtZSI6IktvcmVhLCBSZXB1YmxpYyBvZiJ9LHsiYWxwaGEyIjoiS1ciLCJpZCI6MTI0LCJuYW1lIjoiS3V3YWl0In0seyJhbHBoYTIiOiJLRyIsImlkIjoxMTcsIm5hbWUiOiJLeXJneXpzdGFuIn0seyJhbHBoYTIiOiJMQSIsImlkIjoxMjcsIm5hbWUiOiJMYW8gUGVvcGxlJ3MgRGVtb2NyYXRpYyBSZXB1YmxpYyJ9LHsiYWxwaGEyIjoiTFYiLCJpZCI6MTM2LCJuYW1lIjoiTGF0dmlhIn0seyJhbHBoYTIiOiJMQiIsImlkIjoxMjgsIm5hbWUiOiJMZWJhbm9uIn0seyJhbHBoYTIiOiJMUyIsImlkIjoxMzMsIm5hbWUiOiJMZXNvdGhvIn0seyJhbHBoYTIiOiJMUiIsImlkIjoxMzIsIm5hbWUiOiJMaWJlcmlhIn0seyJhbHBoYTIiOiJMWSIsImlkIjoxMzcsIm5hbWUiOiJMaWJ5YSJ9LHsiYWxwaGEyIjoiTEkiLCJpZCI6MTMwLCJuYW1lIjoiTGllY2h0ZW5zdGVpbiJ9LHsiYWxwaGEyIjoiTFQiLCJpZCI6MTM0LCJuYW1lIjoiTGl0aHVhbmlhIn0seyJhbHBoYTIiOiJMVSIsImlkIjoxMzUsIm5hbWUiOiJMdXhlbWJvdXJnIn0seyJhbHBoYTIiOiJNTyIsImlkIjoxNDksIm5hbWUiOiJNYWNhbyJ9LHsiYWxwaGEyIjoiTUciLCJpZCI6MTQzLCJuYW1lIjoiTWFkYWdhc2NhciJ9LHsiYWxwaGEyIjoiTVciLCJpZCI6MTU3LCJuYW1lIjoiTWFsYXdpIn0seyJhbHBoYTIiOiJNWSIsImlkIjoxNTksIm5hbWUiOiJNYWxheXNpYSJ9LHsiYWxwaGEyIjoiTVYiLCJpZCI6MTU2LCJuYW1lIjoiTWFsZGl2ZXMifSx7ImFscGhhMiI6Ik1MIiwiaWQiOjE0NiwibmFtZSI6Ik1hbGkifSx7ImFscGhhMiI6Ik1UIiwiaWQiOjE1NCwibmFtZSI6Ik1hbHRhIn0seyJhbHBoYTIiOiJNSCIsImlkIjoxNDQsIm5hbWUiOiJNYXJzaGFsbCBJc2xhbmRzIn0seyJhbHBoYTIiOiJNUSIsImlkIjoxNTEsIm5hbWUiOiJNYXJ0aW5pcXVlIn0seyJhbHBoYTIiOiJNUiIsImlkIjoxNTIsIm5hbWUiOiJNYXVyaXRhbmlhIn0seyJhbHBoYTIiOiJNVSIsImlkIjoxNTUsIm5hbWUiOiJNYXVyaXRpdXMifSx7ImFscGhhMiI6IllUIiwiaWQiOjI0NywibmFtZSI6Ik1heW90dGUifSx7ImFscGhhMiI6Ik1YIiwiaWQiOjE1OCwibmFtZSI6Ik1leGljbyJ9LHsiYWxwaGEyIjoiRk0iLCJpZCI6NzQsIm5hbWUiOiJNaWNyb25lc2lhLCBGZWRlcmF0ZWQgU3RhdGVzIE9mIn0seyJhbHBoYTIiOiJNRCIsImlkIjoxNDAsIm5hbWUiOiJNb2xkb3ZhLCBSZXB1YmxpYyBvZiJ9LHsiYWxwaGEyIjoiTUMiLCJpZCI6MTM5LCJuYW1lIjoiTW9uYWNvIn0seyJhbHBoYTIiOiJNTiIsImlkIjoxNDgsIm5hbWUiOiJNb25nb2xpYSJ9LHsiYWxwaGEyIjoiTUUiLCJpZCI6MTQxLCJuYW1lIjoiTW9udGVuZWdybyJ9LHsiYWxwaGEyIjoiTVMiLCJpZCI6MTUzLCJuYW1lIjoiTW9udHNlcnJhdCJ9LHsiYWxwaGEyIjoiTUEiLCJpZCI6MTM4LCJuYW1lIjoiTW9yb2NjbyJ9LHsiYWxwaGEyIjoiTVoiLCJpZCI6MTYwLCJuYW1lIjoiTW96YW1iaXF1ZSJ9LHsiYWxwaGEyIjoiTU0iLCJpZCI6MTQ3LCJuYW1lIjoiTXlhbm1hciJ9LHsiYWxwaGEyIjoiTkEiLCJpZCI6MTYxLCJuYW1lIjoiTmFtaWJpYSJ9LHsiYWxwaGEyIjoiTlIiLCJpZCI6MTcwLCJuYW1lIjoiTmF1cnUifSx7ImFscGhhMiI6Ik5QIiwiaWQiOjE2OSwibmFtZSI6Ik5lcGFsIn0seyJhbHBoYTIiOiJOTCIsImlkIjoxNjcsIm5hbWUiOiJOZXRoZXJsYW5kcyJ9LHsiYWxwaGEyIjoiQU4iLCJpZCI6OCwibmFtZSI6Ik5ldGhlcmxhbmRzIEFudGlsbGVzIn0seyJhbHBoYTIiOiJOQyIsImlkIjoxNjIsIm5hbWUiOiJOZXcgQ2FsZWRvbmlhIn0seyJhbHBoYTIiOiJOWiIsImlkIjoxNzIsIm5hbWUiOiJOZXcgWmVhbGFuZCJ9LHsiYWxwaGEyIjoiTkkiLCJpZCI6MTY2LCJuYW1lIjoiTmljYXJhZ3VhIn0seyJhbHBoYTIiOiJORSIsImlkIjoxNjMsIm5hbWUiOiJOaWdlciJ9LHsiYWxwaGEyIjoiTkciLCJpZCI6MTY1LCJuYW1lIjoiTmlnZXJpYSJ9LHsiYWxwaGEyIjoiTlUiLCJpZCI6MTcxLCJuYW1lIjoiTml1ZSJ9LHsiYWxwaGEyIjoiTkYiLCJpZCI6MTY0LCJuYW1lIjoiTm9yZm9sayBJc2xhbmQifSx7ImFscGhhMiI6Ik1QIiwiaWQiOjE1MCwibmFtZSI6Ik5vcnRoZXJuIE1hcmlhbmEgSXNsYW5kcyJ9LHsiYWxwaGEyIjoiTk8iLCJpZCI6MTY4LCJuYW1lIjoiTm9yd2F5In0seyJhbHBoYTIiOiJPTSIsImlkIjoxNzMsIm5hbWUiOiJPbWFuIn0seyJhbHBoYTIiOiJQSyIsImlkIjoxNzksIm5hbWUiOiJQYWtpc3RhbiJ9LHsiYWxwaGEyIjoiUFciLCJpZCI6MTg2LCJuYW1lIjoiUGFsYXUifSx7ImFscGhhMiI6IlBTIiwiaWQiOjE4NCwibmFtZSI6IlBhbGVzdGluZSwgU3RhdGUgb2YifSx7ImFscGhhMiI6IlBBIiwiaWQiOjE3NCwibmFtZSI6IlBhbmFtYSJ9LHsiYWxwaGEyIjoiUEciLCJpZCI6MTc3LCJuYW1lIjoiUGFwdWEgTmV3IEd1aW5lYSJ9LHsiYWxwaGEyIjoiUFkiLCJpZCI6MTg3LCJuYW1lIjoiUGFyYWd1YXkifSx7ImFscGhhMiI6IlBFIiwiaWQiOjE3NSwibmFtZSI6IlBlcnUifSx7ImFscGhhMiI6IlBIIiwiaWQiOjE3OCwibmFtZSI6IlBoaWxpcHBpbmVzIn0seyJhbHBoYTIiOiJQTiIsImlkIjoxODIsIm5hbWUiOiJQaXRjYWlybiJ9LHsiYWxwaGEyIjoiUEwiLCJpZCI6MTgwLCJuYW1lIjoiUG9sYW5kIn0seyJhbHBoYTIiOiJQVCIsImlkIjoxODUsIm5hbWUiOiJQb3J0dWdhbCJ9LHsiYWxwaGEyIjoiUFIiLCJpZCI6MTgzLCJuYW1lIjoiUHVlcnRvIFJpY28ifSx7ImFscGhhMiI6IlFBIiwiaWQiOjE4OCwibmFtZSI6IlFhdGFyIn0seyJhbHBoYTIiOiJNSyIsImlkIjoxNDUsIm5hbWUiOiJSZXB1YmxpYyBvZiBOb3J0aCBNYWNlZG9uaWEifSx7ImFscGhhMiI6IlJPIiwiaWQiOjE5MCwibmFtZSI6IlJvbWFuaWEifSx7ImFscGhhMiI6IlJVIiwiaWQiOjE5MiwibmFtZSI6IlJ1c3NpYW4gRmVkZXJhdGlvbiJ9LHsiYWxwaGEyIjoiUlciLCJpZCI6MTkzLCJuYW1lIjoiUndhbmRhIn0seyJhbHBoYTIiOiJSRSIsImlkIjoxODksIm5hbWUiOiJSw6l1bmlvbiJ9LHsiYWxwaGEyIjoiQkwiLCJpZCI6MjcsIm5hbWUiOiJTYWludCBCYXJ0aMOpbGVteSJ9LHsiYWxwaGEyIjoiU0giLCJpZCI6MjAwLCJuYW1lIjoiU2FpbnQgSGVsZW5hIn0seyJhbHBoYTIiOiJLTiIsImlkIjoxMjEsIm5hbWUiOiJTYWludCBLaXR0cyBBbmQgTmV2aXMifSx7ImFscGhhMiI6IkxDIiwiaWQiOjEyOSwibmFtZSI6IlNhaW50IEx1Y2lhIn0seyJhbHBoYTIiOiJNRiIsImlkIjoxNDIsIm5hbWUiOiJTYWludCBNYXJ0aW4ifSx7ImFscGhhMiI6IlBNIiwiaWQiOjE4MSwibmFtZSI6IlNhaW50IFBpZXJyZSBBbmQgTWlxdWVsb24ifSx7ImFscGhhMiI6IlZDIiwiaWQiOjIzOCwibmFtZSI6IlNhaW50IFZpbmNlbnQgQW5kIFRoZSBHcmVuZWRpbmVzIn0seyJhbHBoYTIiOiJXUyIsImlkIjoyNDUsIm5hbWUiOiJTYW1vYSJ9LHsiYWxwaGEyIjoiU00iLCJpZCI6MjA1LCJuYW1lIjoiU2FuIE1hcmlubyJ9LHsiYWxwaGEyIjoiU1QiLCJpZCI6MjEwLCJuYW1lIjoiU2FvIFRvbWUgYW5kIFByaW5jaXBlIn0seyJhbHBoYTIiOiJTQSIsImlkIjoxOTQsIm5hbWUiOiJTYXVkaSBBcmFiaWEifSx7ImFscGhhMiI6IlNOIiwiaWQiOjIwNiwibmFtZSI6IlNlbmVnYWwifSx7ImFscGhhMiI6IlJTIiwiaWQiOjE5MSwibmFtZSI6IlNlcmJpYSJ9LHsiYWxwaGEyIjoiU0MiLCJpZCI6MTk2LCJuYW1lIjoiU2V5Y2hlbGxlcyJ9LHsiYWxwaGEyIjoiU0wiLCJpZCI6MjA0LCJuYW1lIjoiU2llcnJhIExlb25lIn0seyJhbHBoYTIiOiJTRyIsImlkIjoxOTksIm5hbWUiOiJTaW5nYXBvcmUifV0sIm1ldGEiOnsicGFnaW5hdGlvbiI6eyJwYWdlIjoyLCJuZXh0IjozLCJjb3VudCI6MjQ5fSwicmVxdWVzdF9pZCI6IjA5NjZjZjFlNzhmMjBlNmE0M2I1ZWE2NTBiNzM1YzEzIn19
+  recorded_at: Sat, 03 May 2025 12:25:52 GMT
+- request:
+    method: get
+    uri: https://api.easyship.com/2023-01/countries?page=3&per_page=100
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <API_KEY>
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 03 May 2025 12:25:52 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Methods:
+      - GET, POST, DELETE, PUT, PATCH, OPTIONS, HEAD
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-request-id
+      Access-Control-Max-Age:
+      - '0'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      X-Xss-Protection:
+      - '0'
+      Content-Security-Policy:
+      - 'default-src ''none''; font-src ''self'' https: data:; img-src ''self'' https:
+        data:; object-src ''none''; script-src ''self'' https: ''nonce-''; style-src
+        ''self'' https: ''nonce-''; frame-ancestors https://*.easyship.com'
+      Etag:
+      - W/"106e6b006613ac71382fba02bf199b40"
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains; preload
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Rack-Cors:
+      - hit
+      X-Request-Id:
+      - 48d688581ecfbf5245319a24ad2ac6f9
+      X-Runtime:
+      - '0.044865'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 939fbe564e68e204-MRS
+    body:
+      encoding: ASCII-8BIT
+      string: '{"countries":[{"alpha2":"SX","id":212,"name":"Sint Maarten"},{"alpha2":"SK","id":203,"name":"Slovakia"},{"alpha2":"SI","id":201,"name":"Slovenia"},{"alpha2":"SB","id":195,"name":"Solomon
+        Islands"},{"alpha2":"SO","id":207,"name":"Somalia"},{"alpha2":"ZA","id":248,"name":"South
+        Africa"},{"alpha2":"GS","id":91,"name":"South Georgia and the South Sandwich
+        Islands"},{"alpha2":"SS","id":209,"name":"South Sudan"},{"alpha2":"ES","id":69,"name":"Spain"},{"alpha2":"LK","id":131,"name":"Sri
+        Lanka"},{"alpha2":"SD","id":197,"name":"Sudan"},{"alpha2":"SR","id":208,"name":"Suriname"},{"alpha2":"SJ","id":202,"name":"Svalbard
+        And Jan Mayen"},{"alpha2":"SE","id":198,"name":"Sweden"},{"alpha2":"CH","id":44,"name":"Switzerland"},{"alpha2":"SY","id":213,"name":"Syrian
+        Arab Republic"},{"alpha2":"TW","id":229,"name":"Taiwan, Republic Of China"},{"alpha2":"TJ","id":220,"name":"Tajikistan"},{"alpha2":"TZ","id":230,"name":"Tanzania,
+        United Republic of"},{"alpha2":"TH","id":219,"name":"Thailand"},{"alpha2":"SZ","id":214,"name":"The
+        Kingdom of Eswatini"},{"alpha2":"TL","id":222,"name":"Timor-Leste"},{"alpha2":"TG","id":218,"name":"Togo"},{"alpha2":"TK","id":221,"name":"Tokelau"},{"alpha2":"TO","id":225,"name":"Tonga"},{"alpha2":"TT","id":227,"name":"Trinidad
+        and Tobago"},{"alpha2":"TN","id":224,"name":"Tunisia"},{"alpha2":"TR","id":226,"name":"Turkey"},{"alpha2":"TM","id":223,"name":"Turkmenistan"},{"alpha2":"TC","id":215,"name":"Turks
+        and Caicos Islands"},{"alpha2":"TV","id":228,"name":"Tuvalu"},{"alpha2":"UG","id":232,"name":"Uganda"},{"alpha2":"UA","id":231,"name":"Ukraine"},{"alpha2":"AE","id":2,"name":"United
+        Arab Emirates"},{"alpha2":"GB","id":78,"name":"United Kingdom"},{"alpha2":"US","id":234,"name":"United
+        States"},{"alpha2":"UM","id":233,"name":"United States Minor Outlying Islands"},{"alpha2":"UY","id":235,"name":"Uruguay"},{"alpha2":"UZ","id":236,"name":"Uzbekistan"},{"alpha2":"VU","id":243,"name":"Vanuatu"},{"alpha2":"VE","id":239,"name":"Venezuela,
+        Bolivarian Republic of"},{"alpha2":"VN","id":242,"name":"Vietnam"},{"alpha2":"VG","id":240,"name":"Virgin
+        Islands, British"},{"alpha2":"VI","id":241,"name":"Virgin Islands, U.S."},{"alpha2":"WF","id":244,"name":"Wallis
+        and Futuna"},{"alpha2":"EH","id":67,"name":"Western Sahara"},{"alpha2":"YE","id":246,"name":"Yemen"},{"alpha2":"ZM","id":249,"name":"Zambia"},{"alpha2":"ZW","id":250,"name":"Zimbabwe"}],"meta":{"pagination":{"page":3,"next":null,"count":249},"request_id":"48d688581ecfbf5245319a24ad2ac6f9"}}'
+  recorded_at: Sat, 03 May 2025 12:25:53 GMT
+recorded_with: VCR 6.3.1

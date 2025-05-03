@@ -1,5 +1,10 @@
 # frozen_string_literal: true
 
+require 'simplecov'
+SimpleCov.start do
+  minimum_coverage 95
+end
+
 require 'easyship'
 
 # Load support files
@@ -19,6 +24,7 @@ RSpec.configure do |config|
   config.before do
     Easyship.configure do |c|
       c.url = 'https://api.easyship.com'
+      c.api_key = ENV.fetch('EASYSHIP_API_KEY', nil)
     end
   end
 end
