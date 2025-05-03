@@ -16,7 +16,7 @@ module Easyship
       private
 
       def handle_status_code(status_code, body)
-        error_class = Easyship::Error::ERRORS[status_code]
+        error_class = Easyship::Error.for_status(status_code)
 
         raise_error(error_class, body) if error_class
       end

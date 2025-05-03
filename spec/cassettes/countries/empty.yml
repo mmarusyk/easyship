@@ -1,0 +1,79 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.easyship.com/2023-01/countries?page=1&per_page=100
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <API_KEY>
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 03 May 2025 12:20:27 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Methods:
+      - GET, POST, DELETE, PUT, PATCH, OPTIONS, HEAD
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-request-id
+      Access-Control-Max-Age:
+      - '0'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      X-Xss-Protection:
+      - '0'
+      Content-Security-Policy:
+      - 'default-src ''none''; font-src ''self'' https: data:; img-src ''self'' https:
+        data:; object-src ''none''; script-src ''self'' https: ''nonce-''; style-src
+        ''self'' https: ''nonce-''; frame-ancestors https://*.easyship.com'
+      Etag:
+      - W/"723b733121cab27d0dc1cbdbcc931a9d"
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains; preload
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Rack-Cors:
+      - hit
+      X-Request-Id:
+      - 8d3aef1a543121f8053d802af191f958
+      X-Runtime:
+      - '0.041808'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 939fb664dec7e279-MRS
+    body:
+      encoding: ASCII-8BIT
+      string: '{"countries":[],"meta":{"pagination":{"page":1,"next":null,"count":0},"request_id":"8d3aef1a543121f8053d802af191f958"}}'
+  recorded_at: Sat, 03 May 2025 12:20:27 GMT
