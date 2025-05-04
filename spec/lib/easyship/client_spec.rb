@@ -14,6 +14,19 @@ RSpec.describe Easyship::Client do
       end
     end
 
+    context 'when raise any error' do
+      it 'contains necessary attributes' do
+        VCR.use_cassette('invalid_token') do
+          client.get(path)
+        rescue Easyship::Errors::InvalidTokenError => e
+          expect(e).to respond_to(:message)
+            .and respond_to(:body_error)
+            .and respond_to(:response_body)
+            .and respond_to(:response_headers)
+        end
+      end
+    end
+
     context 'when invalid api_key' do
       it 'raises an InvalidTokenError' do
         VCR.use_cassette('invalid_token') do

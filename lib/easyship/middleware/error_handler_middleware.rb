@@ -9,20 +9,26 @@ module Easyship
       def on_complete(env)
         status_code = env[:status].to_i
         body = response_body(env[:body])
+        headers = env[:response_headers]
 
-        handle_status_code(status_code, body)
+        handle_status_code(status_code, headers, body)
       end
 
       private
 
-      def handle_status_code(status_code, body)
+      def handle_status_code(status_code, headers, body)
         error_class = Easyship::Error.for_status(status_code)
 
-        raise_error(error_class, body) if error_class
+        raise_error(error_class, headers, body) if error_class
       end
 
-      def raise_error(class_error, body)
-        raise class_error.new(message: message(body), body_error: body_error(body))
+      def raise_error(class_error, headers, body)
+        raise class_error.new(
+          message: message(body),
+          body_error: body_error(body),
+          response_body: body,
+          response_headers: headers
+        )
       end
 
       def body_error(body)

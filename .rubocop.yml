@@ -1,4 +1,5 @@
-require:
+plugins:
+  - rubocop-rake
   - rubocop-rspec
   - rubocop-performance
 
@@ -8,3 +9,6 @@ AllCops:
 
 Style/Copyright:
   Enabled: false
+
+RSpec/ExampleLength:
+  Max: 10

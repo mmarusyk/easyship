@@ -103,6 +103,14 @@ rescue Easyship::Errors::RateLimitError => e
 end
 ```
 
+Each error instance provides these methods:
+
+- `message`: Returns the error message text.
+- `body_error`: Returns a hash containing detailed error information.
+- `response_body`: Returns the full response body from the API.
+- `response_headers`: Returns the HTTP headers from the API response.
+
+
 ### Pagination
 The `get` method in the `Easyship::Client` class is designed to support pagination seamlessly when interacting with the Easyship API by passing block of code. This method abstracts the complexity of managing pagination logic, allowing you to retrieve all items across multiple pages with a single method call.
 
