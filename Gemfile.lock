@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    easyship (0.1.5)
+    easyship (0.2.0)
       faraday (~> 2.9)
 
 GEM

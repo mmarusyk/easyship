@@ -1,5 +1,13 @@
 ## [Unreleased]
 
+## [v.0.2.0](https://github.com/mmarusyk/easyship/tree/v0.2.0) - 2025-05-04
+
+### Added
+- Add response_body and response_header to Easyship::Error
+- Deprecate body_error by @mmarusyk in https://github.com/mmarusyk/easyship/pull/9
+- Add badges by @mmarusyk in https://github.com/mmarusyk/easyship/pull/10
+
+
 ## [v0.1.5](https://github.com/mmarusyk/easyship/tree/v0.1.5) - 2025-05-03
 
 ### Fixed
