@@ -106,7 +106,8 @@ end
 Each error instance provides these methods:
 
 - `message`: Returns the error message text.
-- `body_error`: Returns a hash containing detailed error information.
+- `body_error`: Returns an error details **(Deprecated)**.
+- `error`: Returns a hash containing original detailed error object from Easyship.
 - `response_body`: Returns the full response body from the API.
 - `response_headers`: Returns the HTTP headers from the API response.
 
