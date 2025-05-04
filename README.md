@@ -1,5 +1,9 @@
 # Easyship
 
+[![Gem Version](https://badge.fury.io/rb/easyship.svg)](https://badge.fury.io/rb/easyship)
+[![Build Status](https://github.com/mmarusyk/easyship/workflows/Ruby/badge.svg)](https://github.com/mmarusyk/easyship/actions?query=workflow%3ARuby)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 This gem provides a simple client for Easyship, offering accessing to Easyship's
     shipping, tracking, and logistics services directly from Ruby applications.
 
