@@ -26,9 +26,16 @@ module Easyship
         raise class_error.new(
           message: message(body),
           body_error: body_error(body),
+          error: build_error(body),
           response_body: body,
           response_headers: headers
         )
+      end
+
+      def build_error(body)
+        return default_error unless body.is_a?(Hash)
+
+        body[:error]
       end
 
       def body_error(body)
@@ -59,6 +66,10 @@ module Easyship
 
       def format_by_default(body)
         { details: body, message: 'Something went wrong.' }
+      end
+
+      def default_error
+        { details: [], message: 'Something went wrong.' }
       end
 
       def response_body(body)
