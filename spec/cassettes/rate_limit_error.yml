@@ -1,0 +1,70 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.easyship.com/2024-09/countries
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <API_KEY>
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.9.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 429
+      message: Too Many Requests
+    headers:
+      Date:
+      - Fri, 28 Nov 2025 18:55:59 GMT
+      Content-Length:
+      - '353'
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit:
+      - '1'
+      X-Ratelimit-Remaining:
+      - '0'
+      X-Ratelimit-Reset:
+      - '1764356160'
+      Cache-Control:
+      - no-cache
+      Content-Security-Policy:
+      - 'default-src ''none''; font-src ''self'' https: data:; img-src ''self'' https:
+        data:; object-src ''none''; script-src ''self'' https: ''nonce-''; style-src
+        ''self'' https: ''nonce-''; frame-ancestors https://*.easyship.com'
+      X-Request-Id:
+      - 384042d3615f3adc2beeaace672a6899
+      X-Runtime:
+      - '0.046550'
+      Vary:
+      - Origin
+      X-Rack-Cors:
+      - miss; no-origin
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains; preload
+      Cf-Cache-Status:
+      - DYNAMIC
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 9a5c152d89829a49-BCN
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: '{"error":{"code":"too_many_requests","details":["You have reached the
+        maximum number of requests per second. Contact your account manager to request
+        a higher limit."],"message":"Rate Limit Exceeded. You have reached the maximum
+        number of requests. Please try again later.","request_id":"384042d3615f3adc2beeaace672a6899","type":"invalid_request_error"}}'
+  recorded_at: Fri, 28 Nov 2025 18:56:00 GMT
+recorded_with: VCR 6.2.0

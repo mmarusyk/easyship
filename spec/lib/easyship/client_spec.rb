@@ -14,6 +14,29 @@ RSpec.describe Easyship::Client do
       end
     end
 
+    context 'when block passed' do
+      let(:path) { '/2023-01/countries' }
+      let(:expected_items) { 249 } # Total items in the cassette
+
+      let(:params) do
+        {
+          per_page: 100,
+          requests_per_second: 10,
+          requests_per_minute: 60
+        }
+      end
+
+      it 'returns all countries' do
+        VCR.use_cassette('countries') do
+          countries = []
+
+          client.get(path) { |page| countries += page[:countries] }
+
+          expect(countries.count).to eq(expected_items)
+        end
+      end
+    end
+
     context 'when raise any error' do
       it 'contains necessary attributes' do
         VCR.use_cassette('invalid_token') do
@@ -49,6 +72,16 @@ RSpec.describe Easyship::Client do
       it 'raises an ServerError' do
         VCR.use_cassette('server_error') do
           expect { client.get(path) }.to raise_error(Easyship::Errors::ServerError)
+        end
+      end
+    end
+
+    context 'when rate limit error' do
+      let(:path) { '/2024-09/countries' }
+
+      it 'raises an RateLimitError' do
+        VCR.use_cassette('rate_limit_error') do
+          expect { client.get(path) }.to raise_error(Easyship::Errors::RateLimitError)
         end
       end
     end
