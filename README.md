@@ -58,7 +58,7 @@ Easyship.configure do |config|
 end
 ```
 
-Configuration supports the next keys: `url`, `api_key`, `per_page`.
+Configuration supports the next keys: `url`, `api_key`, `per_page`, `requests_per_second`, `requests_per_minute`.
 
 ### Making Requests
 `Easyship::Client` supports the next methods: `get`, `post`, `put`, `delete`.
@@ -131,7 +131,48 @@ end
 shipments # Returns all shipments from all pages
 ```
 
-To setup items perpage, use the key `per_page` in your configuration.
+To setup items per page, use the key `per_page` in your configuration.
+
+For Example:
+
+```ruby
+# Global defaults
+Easyship.configure do |config|
+  config.per_page = 100
+end
+
+# Per-call overrides (any of these are supported)
+shipments = []
+Easyship::Client.instance.get('/2023-01/shipments', {
+  per_page: 50,
+}) do |page|
+  shipments.concat(page[:shipments])
+end
+```
+
+Rate limiting during pagination:
+- The cursor has no default rate limiting; it uses nil to indicate that rate limiting is disabled.
+  - Use [Rate limiting documentation](https://developers.easyship.com/reference/rate-limit) for more details which values to set.
+- You can override the limits per call, by passing `requests_per_second` and `requests_per_minute`.
+
+Examples:
+
+```ruby
+# Global defaults
+Easyship.configure do |config|
+  config.requests_per_second = 10
+  config.requests_per_minute = 60
+end
+
+# Per-call overrides (any of these are supported)
+shipments = []
+Easyship::Client.instance.get('/2023-01/shipments', {
+  requests_per_second: 5,
+  requests_per_minute: 40,
+}) do |page|
+  shipments.concat(page[:shipments])
+end
+```
 
 ## Development
 

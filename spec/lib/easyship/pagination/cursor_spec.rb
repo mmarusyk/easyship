@@ -33,5 +33,24 @@ RSpec.describe Easyship::Pagination::Cursor do
         end
       end
     end
+
+    context 'when request throttling present' do
+      let(:expected_pages) { 3 }
+
+      let(:params) do
+        {
+          requests_per_second: 1,
+          requests_per_minute: 5
+        }
+      end
+
+      it 'yields each page of results' do
+        VCR.use_cassette('countries') do
+          cursor.all { |p| results << p }
+
+          expect(results.count).to eq(expected_pages)
+        end
+      end
+    end
   end
 end
