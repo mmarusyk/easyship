@@ -1,6 +1,12 @@
 ## [Unreleased]
 
-## [v.0.2.0](https://github.com/mmarusyk/easyship/tree/v0.2.0) - 2025-05-04
+## [v0.3.0](https://github.com/mmarusyk/easyship/tree/v0.3.0) - 2025-11-29
+
+### Added
+- Rate limiting for cursor by @mmarusyk in https://github.com/mmarusyk/easyship/pull/13
+
+
+## [v0.2.0](https://github.com/mmarusyk/easyship/tree/v0.2.0) - 2025-05-04
 
 ### Added
 - Add response_body and response_header to Easyship::Error
