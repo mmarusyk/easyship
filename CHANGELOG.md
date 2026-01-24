@@ -1,5 +1,10 @@
 ## [Unreleased]
 
+## [v0.5.1](https://github.com/mmarusyk/easyship/tree/v0.5.1) - 2026-01-24
+
+### Fixed
+- Set SOURCE_DATE_EPOCH in Rakefile to ensure proper gem release dates are detected by Ruby Toolbox
+
 ## [v0.5.0](https://github.com/mmarusyk/easyship/tree/v0.5.0) - 2026-01-24
 
 ### Added
