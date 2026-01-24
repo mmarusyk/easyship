@@ -1,5 +1,10 @@
 ## [Unreleased]
 
+## [v0.4.0](https://github.com/mmarusyk/easyship/tree/v0.4.0) - 2026-01-24
+
+### Added
+- Support for custom headers by @mmarusyk in https://github.com/mmarusyk/easyship/pull/14
+
 ## [v0.3.0](https://github.com/mmarusyk/easyship/tree/v0.3.0) - 2025-11-29
 
 ### Added

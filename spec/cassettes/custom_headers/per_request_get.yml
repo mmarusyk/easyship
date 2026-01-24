@@ -1,0 +1,31 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.easyship.com/2023-01/account
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.9.1
+      Authorization:
+      - Bearer <API_KEY>
+      Content-Type:
+      - application/json
+      X-Request-Id:
+      - unique-request-id-123
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Request-Id:
+      - unique-request-id-123
+    body:
+      encoding: UTF-8
+      string: '{"account":{"id":"test-account-id","name":"Test Account","email":"test@example.com"}}'
+  recorded_at: Fri, 24 Jan 2026 12:00:00 GMT
+recorded_with: VCR 6.2.0

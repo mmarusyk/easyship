@@ -1,0 +1,33 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.easyship.com/2023-01/shipments
+    body:
+      encoding: UTF-8
+      string: '{"origin_country_alpha2":"SG","destination_country_alpha2":"US","tax_paid_by":"Recipient","is_insured":false,"items":[{"description":"Test item","actual_weight":1.0,"declared_currency":"USD","declared_customs_value":100}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.9.1
+      Authorization:
+      - Bearer <API_KEY>
+      Content-Type:
+      - application/json
+      X-Idempotency-Key:
+      - test-idempotency-key-12345
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Request-Id:
+      - test-request-id-idempotency
+      X-Idempotency-Key:
+      - test-idempotency-key-12345
+    body:
+      encoding: UTF-8
+      string: '{"error":{"message":"Invalid shipment data","details":["height, width, length are required for items"]}}'
+  recorded_at: Fri, 24 Jan 2026 12:00:00 GMT
+recorded_with: VCR 6.2.0
