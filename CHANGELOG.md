@@ -1,9 +1,22 @@
 ## [Unreleased]
 
+## [v0.5.0](https://github.com/mmarusyk/easyship/tree/v0.5.0) - 2026-01-24
+
+### Added
+- Ruby 4.0 support
+
+### Changed
+- **BREAKING**: Minimum Ruby version increased from 3.0.0 to 3.2.0
+
+
+### Fixed
+- Updated unicode-emoji to 4.2.0 for Ruby 4.0 compatibility
+
 ## [v0.4.0](https://github.com/mmarusyk/easyship/tree/v0.4.0) - 2026-01-24
 
 ### Added
 - Support for custom headers by @mmarusyk in https://github.com/mmarusyk/easyship/pull/14
+
 
 ## [v0.3.0](https://github.com/mmarusyk/easyship/tree/v0.3.0) - 2025-11-29
 
