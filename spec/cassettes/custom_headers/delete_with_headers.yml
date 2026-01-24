@@ -1,0 +1,31 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://api.easyship.com/2023-01/shipments/test-id
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.9.1
+      Authorization:
+      - Bearer <API_KEY>
+      Content-Type:
+      - application/json
+      X-Custom-Header:
+      - delete-value
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Request-Id:
+      - test-request-id-delete
+    body:
+      encoding: UTF-8
+      string: '{"error":{"message":"Shipment not found","details":["No shipment found with id: test-id"]}}'
+  recorded_at: Fri, 24 Jan 2026 12:00:00 GMT
+recorded_with: VCR 6.2.0

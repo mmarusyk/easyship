@@ -11,6 +11,7 @@
 .rspec_status
 
 .env
+mise.toml
 
 # IDE files
 .idea/

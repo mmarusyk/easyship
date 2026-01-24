@@ -58,10 +58,10 @@ Easyship.configure do |config|
 end
 ```
 
-Configuration supports the next keys: `url`, `api_key`, `per_page`, `requests_per_second`, `requests_per_minute`.
+Configuration supports the next keys: `url`, `api_key`, `per_page`, `requests_per_second`, `requests_per_minute`, `headers`.
 
 ### Making Requests
-`Easyship::Client` supports the next methods: `get`, `post`, `put`, `delete`.
+`Easyship::Client` supports the next methods: `get`, `post`, `put`, `patch`, `delete`.
 ```ruby
 Easyship::Client.instance.get('/2023-01/account')
 ```
@@ -173,6 +173,104 @@ Easyship::Client.instance.get('/2023-01/shipments', {
   shipments.concat(page[:shipments])
 end
 ```
+
+### Custom Headers
+
+You can pass custom headers both globally (via configuration) and per-request.
+
+**Global Headers (via Configuration):**
+
+```ruby
+Easyship.configure do |config|
+  config.url = 'api_url'
+  config.api_key = 'your_easyship_api_key'
+  config.headers = {
+    'X-Custom-Header' => 'custom-value'
+  }
+end
+```
+
+**Per-Request Headers:**
+
+```ruby
+# Override or add headers for a specific request
+Easyship::Client.instance.get('/2023-01/account', {}, headers: {
+  'X-Request-ID' => 'unique-request-id'
+})
+
+# POST with custom headers
+Easyship::Client.instance.post('/2023-01/shipment', payload, headers: {
+  'X-Idempotency-Key' => 'unique-key'
+})
+
+# PUT with custom headers
+Easyship::Client.instance.put('/2023-01/shipment/123', payload, headers: {
+  'X-Custom-Header' => 'value'
+})
+
+# PATCH with custom headers
+Easyship::Client.instance.patch('/2023-01/shipment/123', payload, headers: {
+  'X-Custom-Header' => 'value'
+})
+
+# DELETE with custom headers
+Easyship::Client.instance.delete('/2023-01/shipment/123', {}, headers: {
+  'X-Custom-Header' => 'value'
+})
+```
+
+**Note:** Per-request headers will override global headers if the same header key is used.
+
+### Using Idempotency Keys
+
+Idempotency keys are essential for safely retrying requests without accidentally performing the same operation twice. This is particularly important for POST requests that create resources (like shipments, orders, or payments).
+
+**Example - Creating a Shipment with Idempotency:**
+
+```ruby
+# Generate a unique key (e.g., UUID, database record ID, or any unique identifier)
+idempotency_key = SecureRandom.uuid
+
+payload = {
+  origin_country_alpha2: "SG",
+  destination_country_alpha2: "US",
+  tax_paid_by: "Recipient",
+  is_insured: false,
+  items: [
+    {
+      description: "Product",
+      actual_weight: 1.2,
+      height: 10,
+      width: 15,
+      length: 20,
+      declared_currency: "USD",
+      declared_customs_value: 50
+    }
+  ]
+}
+
+begin
+  response = Easyship::Client.instance.post(
+    '/2023-01/shipments',
+    payload,
+    headers: { 'X-Idempotency-Key' => idempotency_key }
+  )
+  
+  # If this request fails due to network issues and you retry with the same key,
+  # the API will return the same shipment without creating a duplicate
+rescue Easyship::Errors::EasyshipError => e
+  # Safe to retry with the same idempotency_key
+  retry
+end
+```
+
+**Best Practices:**
+
+- Use unique, random keys (UUIDs are recommended)
+- Store the idempotency key with your order/shipment record in your database
+- Reuse the same key when retrying a failed request
+- Don't reuse keys across different operations or resources
+- Keys typically expire after 24 hours (check API documentation)
 
 ## Development
 

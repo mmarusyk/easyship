@@ -1,0 +1,31 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.easyship.com/2023-01/shipments
+    body:
+      encoding: UTF-8
+      string: '{"origin_country_alpha2":"SG","destination_country_alpha2":"US"}'
+    headers:
+      User-Agent:
+      - Faraday v2.9.1
+      Authorization:
+      - Bearer <API_KEY>
+      Content-Type:
+      - application/json
+      X-Custom-Global:
+      - global-value
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Request-Id:
+      - test-request-id-post
+    body:
+      encoding: UTF-8
+      string: '{"error":{"message":"Missing required fields","details":["items is required"]}}'
+  recorded_at: Fri, 24 Jan 2026 12:00:00 GMT
+recorded_with: VCR 6.2.0
