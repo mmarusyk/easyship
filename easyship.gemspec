@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
 
   spec.version               = Easyship::VERSION
   spec.platform              = Gem::Platform::RUBY
-  spec.required_ruby_version = '>= 3.0.0'
+  spec.required_ruby_version = '>= 3.2.0'
 
   spec.metadata['rubygems_mfa_required'] = 'true'
   spec.metadata['homepage_uri']          = spec.homepage

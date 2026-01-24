@@ -11,7 +11,7 @@ This gem provides a simple client for Easyship, offering accessing to Easyship's
 
 Before you begin, ensure you have met the following requirements:
 
-- Ruby version 3.0.0 or newer. You can check your Ruby version by running `ruby -v`.
+- Ruby version 3.2.0 or newer. You can check your Ruby version by running `ruby -v`.
 - Bundler installed. You can install Bundler with `gem install bundler`.
 
 ## Installation
