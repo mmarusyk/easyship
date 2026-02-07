@@ -15,3 +15,7 @@ RSpec/ExampleLength:
 
 RSpec/NestedGroups:
   Max: 5
+
+RSpec/SpecFilePathFormat:
+  Exclude:
+    - 'spec/integration/**/*_spec.rb'

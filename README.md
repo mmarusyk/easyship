@@ -58,7 +58,72 @@ Easyship.configure do |config|
 end
 ```
 
-Configuration supports the next keys: `url`, `api_key`, `per_page`, `requests_per_second`, `requests_per_minute`, `headers`.
+Configuration supports the next keys: `url`, `api_key`, `per_page`, `requests_per_second`, `requests_per_minute`, `headers`, `logger`.
+
+### Logging
+
+The gem includes secure, professional logging capabilities that are **quiet by default**. Logging is designed to be abstract and never exposes sensitive data like API keys, headers, or request/response bodies.
+
+**Default Behavior (Quiet & Secure):**
+```ruby
+# By default, logging is disabled (NullLogger)
+Easyship.configure do |config|
+  config.url = 'api_url'
+  config.api_key = 'your_easyship_api_key'
+  # No logging output - completely silent
+end
+```
+
+**Using Rails Logger:**
+```ruby
+# In config/initializers/easyship.rb
+Easyship.configure do |config|
+  config.url = 'api_url'
+  config.api_key = 'your_easyship_api_key'
+  config.logger = Rails.logger
+end
+```
+
+**Using Custom Logger:**
+```ruby
+require 'logger'
+
+custom_logger = Logger.new(STDOUT)
+custom_logger.level = Logger::INFO
+
+Easyship.configure do |config|
+  config.url = 'api_url'
+  config.api_key = 'your_easyship_api_key'
+  config.logger = custom_logger
+end
+```
+
+**Log File Output:**
+```ruby
+Easyship.configure do |config|
+  config.url = 'api_url'
+  config.api_key = 'your_easyship_api_key'
+  config.logger = Logger.new('log/easyship.log')
+end
+```
+
+**Example Log Output:**
+```
+[Easyship] GET /2023-01/account
+[Easyship] Response 200 (0.245s)
+[Easyship] POST /2023-01/shipments
+[Easyship] Response 201 (0.432s)
+[Easyship] Error: InvalidTokenError - Invalid API token | Context: {:method=>:get, :path=>"/2023-01/account"}
+```
+
+**Extensibility:**
+You can extend logger module for custom logging needs:
+- `log_info(logger, message)` - General info logging
+- `log_debug(logger, message)` - Debug logging
+- `log_warn(logger, message)` - Warning logging
+- `log_error(logger, error, context)` - Error with context
+- `log_request(logger, method, path)` - Request logging
+- `log_response(logger, status, duration)` - Response logging
 
 ### Making Requests
 `Easyship::Client` supports the next methods: `get`, `post`, `put`, `patch`, `delete`.

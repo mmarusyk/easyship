@@ -1,5 +1,13 @@
 ## [Unreleased]
 
+### Added
+- Secure logging module with configurable logger support
+- `NullLogger` as default (quiet by default) to avoid log pollution
+- Abstract logging methods: `log_info`, `log_debug`, `log_warn`, `log_error`, `log_request`, `log_response`
+- Logger configuration option to allow custom loggers (Rails.logger, custom Logger, etc.)
+- Integration tests for logging functionality
+- Security-first logging: no API keys, headers, or request/response bodies logged
+
 ## [v0.5.1](https://github.com/mmarusyk/easyship/tree/v0.5.1) - 2026-01-24
 
 ### Fixed
