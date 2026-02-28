@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [v0.6.0](https://github.com/mmarusyk/easyship/tree/v0.6.0) - 2026-02-28
+
 ### Added
 - Secure logging module with configurable logger support
 - `NullLogger` as default (quiet by default) to avoid log pollution
